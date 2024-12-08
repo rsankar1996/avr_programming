@@ -1,9 +1,9 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-#define LED_PIN		PD2
-#define LED_DDR		DDRD
-#define LED_PORT	PORTD
+#define LED_PIN		PB5
+#define LED_DDR		DDRB
+#define LED_PORT	PORTB
 
 int main()
 {
@@ -13,7 +13,7 @@ int main()
 	{
 		LED_PORT ^= (1 << LED_PIN);
 
-		_delay_ms(500);
+		_delay_ms(1000);
 	}
 
 	return 0;
