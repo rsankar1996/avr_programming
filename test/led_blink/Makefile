@@ -7,7 +7,7 @@ APPLICATION = led_blink
 
 all = main.hex
 
-INCL_DIR = ../gpio/
+INCL_DIR = ../../gpio/
 
 led_blink.hex: led_blink.elf
 	$(OBJCOPY) -O ihex -R .eeprom $< $@
@@ -18,7 +18,7 @@ led_blink.elf: main.o gpio.o
 main.o: main.c
 	$(CC) $(CFLAGS) -I$(INCL_DIR) -c -o $@ $<
 
-gpio.o: ../gpio/gpio.c
+gpio.o: ../../gpio/gpio.c
 	$(CC) $(CFLAGS) -I$(INCL_DIR) -c -o $@ $<
 
 clean:
