@@ -20,5 +20,15 @@ void uart_tx(char data)
 
 	/* wait till the shift register is empty */
 	while ((*(volatile uint8_t *)UART_UCSR0A & (0x01 << 6)) == 0);
+
+	*(volatile uint8_t *)UART_UCSR0A |= (0x01 << 6);
 }
 
+void uart_string_tx(char * data)
+{
+	while (*data != '\0')
+	{
+		uart_tx(*data);
+		data++;
+	}
+}

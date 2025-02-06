@@ -10,5 +10,6 @@
 
 void uart_init();
 void uart_tx(char data);
+void uart_string_tx(char * data);
 
 #endif /* _UART_H */
